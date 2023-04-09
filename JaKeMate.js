@@ -1,21 +1,70 @@
 /*E-commerce donde se podra comprar mates y bombillas, asi como ver consejos sobre uso e implementaciones. Web dise;ada desde cero.*/
 
-let stockMateImperial = 25;
-let stockMateCamionero = 25;
-let stockMateGuampa = 25;
-let stockMateCeramica = 25;
-let stockBombillaPlata = 20;
-let stockBombillaAlpaca = 20;
-let stockBombillaBronce = 20;
+/*Se definen dos array de objetos para visualizar y almacenar los articulos*/
+let stringDeArticulos = ''
+let Mates= [
+  {
+    "nombre": "Mate Imperial",
+    "precio": 3500,
+    "moneda": "UYU",
+    "stock": 25,
+    "imagen": "",
+  },
 
-let precioMateImperial = 3500;
-let precioMateCamionero = 2200;
-let precioMateGuampa = 1000;
-let precioMateCeramica = 780;
-let precioBombillaPlata = 1500;
-let precioBombillaAlpaca = 1000;
-let precioBombillaBronce = 1350;
-let stringDeArticulos = '';
+  {
+    "nombre": "Mate Camionero",
+    "precio": 2200,
+    "moneda": "UYU",
+    "stock": 25,
+    "imagen": "",
+
+  },
+  {
+    "nombre": "Mate Guampa",
+    "precio": 1000,
+    "moneda": "UYU",
+    "stock": 25,
+    "imagen": "",
+
+  },
+  {
+    "nombre": "Mate Ceramica",
+    "precio": 780,
+    "moneda": "UYU",
+    "stock": 25,
+    "imagen": "",
+
+  }
+
+]
+
+let Bombillas =[
+  {
+    "nombre": "Bombilla de Plata",
+    "precio": 1500,
+    "moneda": "UYU",
+    "stock": 20,
+    "imagen": "",
+  },
+
+  {
+    "nombre": "Bombilla de Bronce",
+    "precio": 1350,
+    "moneda": "UYU",
+    "stock": 20,
+    "imagen": "",
+
+  },
+  {
+    "nombre": "Bombilla de Plata",
+    "precio": 1000,
+    "moneda": "UYU",
+    "stock": 20,
+    "imagen": "",
+
+  }
+
+]
 
 /*const ArticulosCarrito = {
     Articulos: ,
@@ -45,23 +94,51 @@ let stringDeArticulos = '';
 
 }*/
 
-function mostrarArticulos (cantidadDeArticulos){
-  for (let i = 0 ; i <= cantidadDeArticulos ; i++){
-    stringDeArticulos += 'Aca se mostrara un articulo '
-    
+function mostrarArticulos(Articulos) {
+
+  if (Articulos == "MostrarTodo") {
+
+    Mates.forEach(element => {
+
+      {
+        stringDeArticulos += `${element.nombre} ${element.moneda} ${element.precio}`
+      }
+
+    });
+
+    Bombillas.forEach(element => {
+
+      {
+        stringDeArticulos += `${element.nombre} ${element.moneda} ${element.precio}`
+      }
+
+    });
+
+  } else {
+    Articulos.forEach(element => {
+
+      {
+        stringDeArticulos += `${element.nombre} ${element.moneda} ${element.precio}`
+      }
+
+    });
 
   }
 
   alert(stringDeArticulos);
 }
-const busqueda = prompt("Que estas buscando? Opciones : Mates o Bombillas o MostrarArticulosDisponibles")
 
-if (busqueda == "Mates") {
-    alert("Aca mostraria los mates")
-} else if (busqueda == "Bombillas"){
-    alert("Aca mostraria las bombillas")
-} else if (busqueda == "MostrarArticulosDisponibles"){
-  mostrarArticulos(16)
+
+const busqueda = prompt("Que estas buscando? Opciones : \n1)Mates \n2)Bombillas \n3)MostrarArticulosDisponibles")
+
+if (busqueda == "1") {
+    mostrarArticulos(Mates)
+} else if (busqueda == "2"){
+   mostrarArticulos(Bombillas)
+} else if (busqueda == "3"){
+  mostrarArticulos("MostrarTodo")
+}else{
+  alert("Opcion no valida")
 }
 
 
