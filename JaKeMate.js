@@ -2,13 +2,14 @@
 
 /*Se definen dos array de objetos para visualizar y almacenar los articulos*/
 let stringDeArticulos = ''
-let Mates= [
+let Articulos= [
   {
     "nombre": "Mate Imperial",
     "precio": 3500,
     "moneda": "UYU",
     "stock": 25,
     "imagen": "",
+    "id" : 1717178,
   },
 
   {
@@ -17,6 +18,7 @@ let Mates= [
     "moneda": "UYU",
     "stock": 25,
     "imagen": "",
+    "id" : 161616,
 
   },
   {
@@ -25,6 +27,7 @@ let Mates= [
     "moneda": "UYU",
     "stock": 25,
     "imagen": "",
+    "id" : 171717,
 
   },
   {
@@ -33,18 +36,16 @@ let Mates= [
     "moneda": "UYU",
     "stock": 25,
     "imagen": "",
+    "id" : 15151515,
 
-  }
-
-]
-
-let Bombillas =[
+  },
   {
     "nombre": "Bombilla de Plata",
     "precio": 1500,
     "moneda": "UYU",
     "stock": 20,
     "imagen": "",
+    "id" : 141414,
   },
 
   {
@@ -53,93 +54,102 @@ let Bombillas =[
     "moneda": "UYU",
     "stock": 20,
     "imagen": "",
+    "id": 13131313,
 
   },
   {
-    "nombre": "Bombilla de Plata",
+    "nombre": "Bombilla de Alpaca",
     "precio": 1000,
     "moneda": "UYU",
     "stock": 20,
     "imagen": "",
+    "id" : 121212 ,
 
   }
 
 ]
 
-/*const ArticulosCarrito = {
-    Articulos: ,
-    Total:,
-    Ipuestos:,
-  };*/
-
-
-/*const carrito = {
-    nombre: ,
-    apellido:,
-    direccion:,
-    telefono:,
-  };
-*/
-
-//function mandarAlCarrito ()
 
 
 
-/*function comprar(Producto,cantidad){
+const inputBuscador = document.getElementById("buscador")
+const btnSearch = document.getElementById("botonBuscar")
+const informacion = document.getElementById("Informacion")
+let carrito = [];
 
-    mandarAlCarrito(Producto,cantidad)
+function agregarAlCarrito(idCarro){
 
-    //descuento del stock el Producto
+  const filtrado = Articulos.filter((e) => {
+    return e.id == idCarro;
+  });
+
+  carrito.push({
+    "nombre": filtrado[0].nombre,
+    "precio": filtrado[0].precio,
+    "moneda": filtrado[0].moneda,
+    "stock": filtrado[0].stock,
+    "imagen": "",
+    "id": filtrado[0].id
+  });
+
+  console.log(carrito)
+
+  
+}
+
+function mostrarArticulos(arr) {
+
+  informacion.innerHTML = "";
+  let info = "";
+  
+  if (arr.length > 0) {
+
+    for (let i = 0; i < arr.length; i++) {
+
+      info += `<div class="card">
+                  <img src="" alt="${arr[i].nombre}">
+                  <hr>
+                  <h3>${arr[i].nombre}</h3>
+                  <p>Precio: $${arr[i].precio} </p>
+                    <div class="card-action">
+                      <button class = "botonCarrito" type = "submit" id="${arr[i].id}" onclick = "agregarAlCarrito(${arr[i].id})">Comprar</button>
+                    </div>
+                </div>`
 
 
-}*/
-
-function mostrarArticulos(Articulos) {
-
-  if (Articulos == "MostrarTodo") {
-
-    Mates.forEach(element => {
-
-      {
-        stringDeArticulos += `${element.nombre} ${element.moneda} ${element.precio}`
-      }
-
-    });
-
-    Bombillas.forEach(element => {
-
-      {
-        stringDeArticulos += `${element.nombre} ${element.moneda} ${element.precio}`
-      }
-
-    });
+    }
 
   } else {
-    Articulos.forEach(element => {
 
-      {
-        stringDeArticulos += `${element.nombre} ${element.moneda} ${element.precio}`
-      }
-
-    });
-
+    info = `<h1> No se encontraron articulos para su busqueda </h1>`
   }
 
-  alert(stringDeArticulos);
+
+  
+  
+  informacion.innerHTML = info
+  
+
+
 }
 
 
-const busqueda = prompt("Que estas buscando? Opciones : \n1)Mates \n2)Bombillas \n3)MostrarArticulosDisponibles")
+function filtrarArticulos(arr, filtro) {
+  const filtrado = arr.filter((e) => {
+    return e.nombre.includes(filtro);
+  });
 
-if (busqueda == "1") {
-    mostrarArticulos(Mates)
-} else if (busqueda == "2"){
-   mostrarArticulos(Bombillas)
-} else if (busqueda == "3"){
-  mostrarArticulos("MostrarTodo")
-}else{
-  alert("Opcion no valida")
+  mostrarArticulos(filtrado);
+
 }
+
+
+btnSearch.addEventListener("click",() =>{
+  filtrarArticulos(Articulos,inputBuscador.value)
+})
+
+
+
 
 
 
