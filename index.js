@@ -1,10 +1,6 @@
 /*E-commerce donde se podra comprar mates y bombillas, asi como ver consejos sobre uso e implementaciones. Web dise;ada desde cero.*/
 
 /*Se definen dos array de objetos para visualizar y almacenar los articulos*/
-let stringDeArticulos = ''
-
-
-
 
 
 const inputBuscador = document.getElementById("buscador")
@@ -12,7 +8,9 @@ const btnSearch = document.getElementById("botonBuscar")
 const informacion = document.getElementById("Informacion")
 let carrito = [];
 
-function agregarAlCarrito(idCarro){
+function mostrarArticulos(Articulos);
+
+function agregarAlCarrito(idCarro) {
 
   const filtrado = Articulos.filter((e) => {
     return e.id == idCarro;
@@ -27,9 +25,14 @@ function agregarAlCarrito(idCarro){
     "id": filtrado[0].id
   });
 
-  console.log(carrito)
+  var iralcarrito = window.confirm('¿Quieres finalizar compra?');
+  if (resultado === true) {
+    window.alert('Redirigiendo al carrito');
+    
+  } else {
+    window.alert('Continuar comprando');
+  }
 
-  
 }
 
 function mostrarArticulos(arr) {
