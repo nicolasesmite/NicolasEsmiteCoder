@@ -137,3 +137,6 @@ function filtrarArticulos(arr, filtro) {
 btnSearch.addEventListener("click",() =>{
   filtrarArticulos(Articulos,inputBuscador.value)
 })
+
+
+
