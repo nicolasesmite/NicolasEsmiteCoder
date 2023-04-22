@@ -8,7 +8,7 @@ const btnSearch = document.getElementById("botonBuscar")
 const informacion = document.getElementById("Informacion")
 let carrito = [];
 
-mostrarArticulos(Articulos);
+mostrarArticulos(Articulos)
 
 function agregarAlCarrito(idCarro) {
 
