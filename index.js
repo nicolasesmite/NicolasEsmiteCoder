@@ -76,6 +76,8 @@ const btnSearch = document.getElementById("botonBuscar")
 const informacion = document.getElementById("Informacion")
 let carrito = [];
 
+mostrarArticulos(Articulos);
+
 function agregarAlCarrito(idCarro){
 
   const filtrado = Articulos.filter((e) => {
@@ -137,6 +139,5 @@ function filtrarArticulos(arr, filtro) {
 btnSearch.addEventListener("click",() =>{
   filtrarArticulos(Articulos,inputBuscador.value)
 })
-
 
 
