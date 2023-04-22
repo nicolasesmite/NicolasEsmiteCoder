@@ -11,7 +11,7 @@ contenedorCarrito.innerHTML = "";
                   <img src="" alt="${carritoDeCompras[i].nombre}">
                   <hr>
                   <h3>${carritoDeCompras[i].nombre}</h3>
-                  <p>Precio: ${carritoDeCompras[i].precio} </p>
+                  <p>Precio:$ ${carritoDeCompras[i].precio} </p>
                 </div>`}
 
   } else {

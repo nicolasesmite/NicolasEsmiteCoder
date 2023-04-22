@@ -110,7 +110,7 @@ function mostrarArticulos(arr) {
                   <img src="" alt="${arr[i].nombre}">
                   <hr>
                   <h3>${arr[i].nombre}</h3>
-                  <p>Precio: ${arr[i].precio} </p>
+                  <p>Precio: $${arr[i].precio} </p>
                     <div class="card-action">
                       <button class = "botonCarrito" type = "submit" id="${arr[i].id}" onclick = "agregarAlCarrito(${arr[i].id})">Comprar</button>
                     </div>
