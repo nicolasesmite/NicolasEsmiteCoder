@@ -7,7 +7,7 @@ let Articulos= [
     "precio": 3500,
     "moneda": "UYU",
     "stock": 25,
-    "imagen": "",
+    "imagen": "imagenes/mate imperial.jpg",
     "id" : 1717178,
   },
 
@@ -16,7 +16,7 @@ let Articulos= [
     "precio": 2200,
     "moneda": "UYU",
     "stock": 25,
-    "imagen": "",
+    "imagen": "imagenes/mate camionero.jpg",
     "id" : 161616,
 
   },
@@ -25,7 +25,7 @@ let Articulos= [
     "precio": 1000,
     "moneda": "UYU",
     "stock": 25,
-    "imagen": "",
+    "imagen": "imagenes/mate guampa.jpg",
     "id" : 171717,
 
   },
@@ -34,7 +34,7 @@ let Articulos= [
     "precio": 780,
     "moneda": "UYU",
     "stock": 25,
-    "imagen": "",
+    "imagen": "imagenes/mate ceramica.jpg",
     "id" : 15151515,
 
   },
