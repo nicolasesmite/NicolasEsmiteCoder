@@ -1,6 +1,5 @@
 /*E-commerce donde se podra comprar mates y bombillas, asi como ver consejos sobre uso e implementaciones. Web dise;ada desde cero.*/
 
-/*Se definen dos array de objetos para visualizar y almacenar los articulos*/
 
 let Articulos= [
   {
@@ -39,6 +38,7 @@ let Articulos= [
     "id" : 15151515,
 
   },
+
   {
     "nombre": "Bombilla de Plata",
     "precio": 1500,
@@ -58,6 +58,7 @@ let Articulos= [
 
   },
   {
+    "nombre": "Bombilla de Plata",
     "nombre": "Bombilla de Alpaca",
     "precio": 1000,
     "moneda": "UYU",
@@ -69,15 +70,13 @@ let Articulos= [
 
 ]
 
+
 const inputBuscador = document.getElementById("buscador")
 const btnSearch = document.getElementById("botonBuscar")
 const informacion = document.getElementById("Informacion")
 let carrito = [];
 
-
-
-
-function agregarAlCarrito(idCarro) {
+function agregarAlCarrito(idCarro){
 
   const filtrado = Articulos.filter((e) => {
     return e.id == idCarro;
@@ -92,18 +91,18 @@ function agregarAlCarrito(idCarro) {
     "id": filtrado[0].id
   });
 
-  
+  console.log(carrito)
+
 }
 
-function mostrarArticulos(arr) {
 
+
+function mostrarArticulos(arr) {
   informacion.innerHTML = "";
   let info = "";
-  
+
   if (arr.length > 0) {
-
     for (let i = 0; i < arr.length; i++) {
-
       info += `<div class="card">
                   <img src="" alt="${arr[i].nombre}">
                   <hr>
@@ -112,10 +111,7 @@ function mostrarArticulos(arr) {
                     <div class="card-action">
                       <button class = "botonCarrito" type = "submit" id="${arr[i].id}" onclick = "agregarAlCarrito(${arr[i].id})">Comprar</button>
                     </div>
-                </div>`
-
-
-    }
+                </div>`}
 
   } else {
 
@@ -123,11 +119,7 @@ function mostrarArticulos(arr) {
   }
 
 
-  
-  
   informacion.innerHTML = info
-  
-
 
 }
 
@@ -138,18 +130,10 @@ function filtrarArticulos(arr, filtro) {
   });
 
   mostrarArticulos(filtrado);
-
+;
 }
 
 
 btnSearch.addEventListener("click",() =>{
-  mostrarArticulos(Articulos)
+  filtrarArticulos(Articulos,inputBuscador.value)
 })
-
-
-
-
-
-
-
-
