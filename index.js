@@ -90,7 +90,7 @@ function agregarAlCarrito(idCarro){
     "precio": filtrado[0].precio,
     "moneda": filtrado[0].moneda,
     "stock": filtrado[0].stock,
-    "imagen": "",
+    "imagen": filtrado[0].imagen,
     "id": filtrado[0].id
   });
 
