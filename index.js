@@ -2,12 +2,6 @@
 
 /*Se definen dos array de objetos para visualizar y almacenar los articulos*/
 
-
-const inputBuscador = document.getElementById("buscador")
-const btnSearch = document.getElementById("botonBuscar")
-const informacion = document.getElementById("Informacion")
-let carrito = [];
-
 let Articulos= [
   {
     "nombre": "Mate Imperial",
@@ -75,7 +69,13 @@ let Articulos= [
 
 ]
 
-mostrarArticulos(Articulos)
+const inputBuscador = document.getElementById("buscador")
+const btnSearch = document.getElementById("botonBuscar")
+const informacion = document.getElementById("Informacion")
+let carrito = [];
+
+
+
 
 function agregarAlCarrito(idCarro) {
 
@@ -92,14 +92,7 @@ function agregarAlCarrito(idCarro) {
     "id": filtrado[0].id
   });
 
-  var iralcarrito = window.confirm('¿Quieres finalizar compra?');
-  if (resultado === true) {
-    window.alert('Redirigiendo al carrito');
-    
-  } else {
-    window.alert('Continuar comprando');
-  }
-
+  
 }
 
 function mostrarArticulos(arr) {
@@ -150,9 +143,8 @@ function filtrarArticulos(arr, filtro) {
 
 
 btnSearch.addEventListener("click",() =>{
-  filtrarArticulos(Articulos,inputBuscador.value)
+  mostrarArticulos(Articulos)
 })
-
 
 
 
