@@ -74,7 +74,13 @@ let Articulos= [
 const inputBuscador = document.getElementById("buscador")
 const btnSearch = document.getElementById("botonBuscar")
 const informacion = document.getElementById("Informacion")
-let carrito = [];
+let carrito = localStorage.getItem("carrito")
+
+if (localStorage.getItem("carrito") != null){
+  carrito = JSON.parse(localStorage.getItem("carrito"))
+} else {
+  carrito = []
+}
 
 
 mostrarArticulos(Articulos);
