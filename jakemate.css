@@ -1,0 +1,22 @@
+
+.card {
+    border: 2px;
+    border-style: solid;
+    padding: 10px;
+}
+
+.imgArt{
+    width: 100px;
+}
+
+div.infoCard{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    margin: 5px;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.imgCarrito {
+    width: 50px;
+}

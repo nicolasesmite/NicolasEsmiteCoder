@@ -107,7 +107,7 @@ function mostrarArticulos(arr) {
   if (arr.length > 0) {
     for (let i = 0; i < arr.length; i++) {
       info += `<div class="card">
-                  <img src="" alt="${arr[i].nombre}">
+                  <img class="imgArt" src="${arr[i].imagen}" alt="${arr[i].nombre}">
                   <hr>
                   <h3>${arr[i].nombre}</h3>
                   <p>Precio: $${arr[i].precio} </p>

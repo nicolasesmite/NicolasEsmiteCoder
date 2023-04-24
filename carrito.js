@@ -7,11 +7,13 @@ contenedorCarrito.innerHTML = "";
 
   if (carritoDeCompras.length > 0) {
     for (let i = 0; i < carritoDeCompras.length; i++) {
-      info += `<div class="card">
-                  <img src="${carritoDeCompras[i].imagen}" alt="${carritoDeCompras[i].nombre}">
-                  <hr>
+      info += `<div class="cardCarrito">
+                  <img class="imgCarrito" src="${carritoDeCompras[i].imagen}" alt="${carritoDeCompras[i].nombre}">
                   <h3>${carritoDeCompras[i].nombre}</h3>
-                  <p>Precio:$ ${carritoDeCompras[i].precio} </p>
+                  <p>Precio por unidad:$ ${carritoDeCompras[i].precio} </p>
+                  <p>Cantidad de unidades: </p>
+                  <p>Precio total: </p>
+                  <hr>
                 </div>`}
 
   } else {
