@@ -85,22 +85,62 @@ if (localStorage.getItem("carrito") != null){
 
 mostrarArticulos(Articulos);
 
-function agregarAlCarrito(idCarro){
+function agregarAlCarrito(idCarro) {
 
-  const filtrado = Articulos.filter((e) => {
-    return e.id == idCarro;
-  });
+  if (carrito.length > 0) {
+    if ((carrito.find(({ id }) => id === idCarro)) != undefined) {
 
-  carrito.push({
-    "nombre": filtrado[0].nombre,
-    "precio": filtrado[0].precio,
-    "moneda": filtrado[0].moneda,
-    "stock": filtrado[0].stock,
-    "imagen": filtrado[0].imagen,
-    "id": filtrado[0].id
-  });
+      const filtrado = carrito.filter((e) => {
+        return e.id == idCarro;
+      });
 
-  localStorage.setItem("carrito",JSON.stringify(carrito))
+      let encontrado = filtrado[0];
+      encontrado.cantidad += 1;
+
+    } else {
+
+      const filtrado = Articulos.filter((e) => {
+        return e.id == idCarro;
+      });
+
+      carrito.push({
+        "nombre": filtrado[0].nombre,
+        "precio": filtrado[0].precio,
+        "moneda": filtrado[0].moneda,
+        "stock": filtrado[0].stock,
+        "imagen": filtrado[0].imagen,
+        "id": filtrado[0].id,
+        "cantidad": 1
+      });
+
+
+
+    }
+  } else {
+
+    const filtrado = Articulos.filter((e) => {
+      return e.id == idCarro;
+    });
+
+    carrito.push({
+      "nombre": filtrado[0].nombre,
+      "precio": filtrado[0].precio,
+      "moneda": filtrado[0].moneda,
+      "stock": filtrado[0].stock,
+      "imagen": filtrado[0].imagen,
+      "id": filtrado[0].id,
+      "cantidad": 1
+
+    });
+  }
+
+
+
+
+
+
+
+  localStorage.setItem("carrito", JSON.stringify(carrito))
 
 }
 

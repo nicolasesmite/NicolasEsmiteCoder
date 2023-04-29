@@ -11,8 +11,8 @@ contenedorCarrito.innerHTML = "";
                   <img class="imgCarrito" src="${carritoDeCompras[i].imagen}" alt="${carritoDeCompras[i].nombre}">
                   <h3>${carritoDeCompras[i].nombre}</h3>
                   <p>Precio por unidad:$ ${carritoDeCompras[i].precio} </p>
-                  <p>Cantidad de unidades: </p>
-                  <p>Precio total: </p>
+                  <p>Cantidad de unidades: ${carritoDeCompras[i].cantidad} </p>
+                  <p>Precio total:$ ${carritoDeCompras[i].cantidad * carritoDeCompras[i].precio} </p>
                   <hr>
                 </div>`}
 
