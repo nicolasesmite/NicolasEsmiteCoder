@@ -5,7 +5,7 @@ contenedorCarrito.innerHTML = "";
 
   let info = "";
 
-  if (carritoDeCompras.length > 0) {
+  if (carritoDeCompras != null) {
     for (let i = 0; i < carritoDeCompras.length; i++) {
       info += `<div class="cardCarrito">
                   <img class="imgCarrito" src="${carritoDeCompras[i].imagen}" alt="${carritoDeCompras[i].nombre}">
