@@ -134,13 +134,27 @@ function agregarAlCarrito(idCarro) {
     });
   }
 
-
-
-
-
-
-
   localStorage.setItem("carrito", JSON.stringify(carrito))
+
+  Swal.fire({
+    title: '<strong><u>¡Producto agregado con exito!</u></strong>',
+    icon: 'success',
+    html:
+      '<b>¿Desea ir al carrito para finalizar compra?</b>',
+    showCloseButton: true,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up">Continuar comprando</i>',
+    confirmButtonAriaLabel: 'Thumbs up, great!',
+    cancelButtonText:
+      '<i class="fa fa-thumbs-down">Ir al Carrito</i>',
+    cancelButtonAriaLabel: 'Thumbs down'
+  }).then((result) => {
+    if (result.isDismissed) {
+      window.location.href = "carrito.html"
+    }
+  })
 
 }
 
