@@ -1,5 +1,8 @@
-
+body{
+    background-color: rgb(18, 181, 89);
+}
 .card {
+    background-color: rgb(10, 170, 96);
     border: 2px;
     border-style: solid;
     padding: 10px;
@@ -12,11 +15,37 @@
 div.infoCard{
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    margin: 5px;
     column-gap: 5px;
     row-gap: 5px;
 }
 
 .imgCarrito {
     width: 50px;
+}
+
+.imgLogo{
+    width:100px;
+}
+
+.Navbar{
+
+    background-color: rgb(28, 178, 103);
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+
+    float:left;
+    padding: 3px;
+}
+
+.logoCarrito {
+    float: right;
 }
