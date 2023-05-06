@@ -1,74 +1,13 @@
 /*E-commerce donde se podra comprar mates y bombillas, asi como ver consejos sobre uso e implementaciones. Web dise;ada desde cero.*/
 
+let Articulos = [];
 
-let Articulos= [
-  {
-    "nombre": "Mate Imperial",
-    "precio": 3500,
-    "moneda": "UYU",
-    "stock": 25,
-    "imagen": "imagenes/mate imperial.jpg",
-    "id" : 1717178,
-  },
-
-  {
-    "nombre": "Mate Camionero",
-    "precio": 2200,
-    "moneda": "UYU",
-    "stock": 25,
-    "imagen": "imagenes/mate camionero.jpg",
-    "id" : 161616,
-
-  },
-  {
-    "nombre": "Mate Guampa",
-    "precio": 1000,
-    "moneda": "UYU",
-    "stock": 25,
-    "imagen": "imagenes/mate guampa.jpg",
-    "id" : 171717,
-
-  },
-  {
-    "nombre": "Mate Ceramica",
-    "precio": 780,
-    "moneda": "UYU",
-    "stock": 25,
-    "imagen": "imagenes/mate ceramica.jpg",
-    "id" : 15151515,
-
-  },
-
-  {
-    "nombre": "Bombilla de Plata",
-    "precio": 1500,
-    "moneda": "UYU",
-    "stock": 20,
-    "imagen": "",
-    "id" : 141414,
-  },
-
-  {
-    "nombre": "Bombilla de Bronce",
-    "precio": 1350,
-    "moneda": "UYU",
-    "stock": 20,
-    "imagen": "",
-    "id": 13131313,
-
-  },
-  {
-    "nombre": "Bombilla de Plata",
-    "nombre": "Bombilla de Alpaca",
-    "precio": 1000,
-    "moneda": "UYU",
-    "stock": 20,
-    "imagen": "",
-    "id" : 121212 ,
-
-  }
-
-]
+fetch('./jakemate.json/articulos.json')
+.then(res => res.json())
+.then(data =>{
+  Articulos = data;
+  mostrarArticulos(Articulos);
+})
 
 
 const inputBuscador = document.getElementById("buscador")
@@ -83,7 +22,7 @@ if (localStorage.getItem("carrito") != null){
 }
 
 
-mostrarArticulos(Articulos);
+
 
 function agregarAlCarrito(idCarro) {
 

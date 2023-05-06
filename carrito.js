@@ -1,3 +1,4 @@
+
 carritoDeCompras = JSON.parse(localStorage.getItem("carrito"));
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 
@@ -23,3 +24,4 @@ contenedorCarrito.innerHTML = "";
 
 
   contenedorCarrito.innerHTML = info
+
