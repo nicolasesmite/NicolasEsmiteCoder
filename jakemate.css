@@ -1,18 +1,25 @@
 body{
-    background-color: rgb(18, 181, 89);
+    background-image: url(https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_1280.jpg);
+    background-repeat: no-repeat;
 }
+
 .card {
-    background-color: rgb(10, 170, 96);
+    background-color: rgba(85, 170, 10,.8);
     border: 2px;
     border-style: solid;
     padding: 10px;
 }
 
 .imgArt{
-    width: 100px;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 130px;
 }
 
 div.infoCard{
+
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     column-gap: 5px;
@@ -25,11 +32,13 @@ div.infoCard{
 
 .imgLogo{
     width:100px;
+    border-radius: 5px;
+    opacity: 0.5;
 }
 
 .Navbar{
 
-    background-color: rgb(28, 178, 103);
+    background-color: rgba(58, 199, 129,0.4);
 
 }
 
@@ -41,7 +50,6 @@ ul {
 }
 
 li {
-
     float:left;
     padding: 3px;
 }
