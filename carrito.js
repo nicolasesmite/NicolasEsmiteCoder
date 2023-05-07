@@ -9,11 +9,12 @@ function mostrarArticulosCarrito(carritoDeCompras){
 
   let info = "";
 
-  if (carritoDeCompras != null) {
+  if (carritoDeCompras.length >0) {
     for (let i = 0; i < carritoDeCompras.length; i++) {
       info += `<div class="cardCarrito">
-                  <img class="imgCarrito" src="${carritoDeCompras[i].imagen}" alt="${carritoDeCompras[i].nombre}">
                   <h3>${carritoDeCompras[i].nombre}</h3>
+                  <img class="imgCarrito" src="${carritoDeCompras[i].imagen}" alt="${carritoDeCompras[i].nombre}">
+                  <br>
                   <a>Precio por unidad:$ ${carritoDeCompras[i].precio} </a>
                   <a>Cantidad de unidades: ${carritoDeCompras[i].cantidad} </a>
                   <a>Precio total:$ ${carritoDeCompras[i].cantidad * carritoDeCompras[i].precio} </a>
@@ -23,7 +24,22 @@ function mostrarArticulosCarrito(carritoDeCompras){
 
   } else {
 
-    info = `<h1> El carrito esta vacio </h1>`
+    
+  Swal.fire({
+    title: '<strong><u>¡Su carrito esta vacio!</u></strong>',
+    imageUrl: 'https://i.pinimg.com/originals/3f/42/cc/3f42ccba5094ec7e69811b3645f13131.jpg',
+    icon: 'alert',
+    html:
+      '<b>¿Desea ir al shop para continuar comprando?</b>',
+    focusConfirm: false,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up">Continuar comprando</i>',
+    confirmButtonAriaLabel: 'Thumbs up, great!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = "index.html"
+    }
+  })
   }
 
 

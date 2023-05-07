@@ -13,16 +13,16 @@ body{
 
 .cardCarrito {
 
-    align-items: center;
-    background-color: rgba(18, 187, 68, 0.5);
+    background-color: rgba(18, 187, 68, 0.8);
     border: 1px;
     border-style: solid;
     padding: 5px;
-    width: 50%;
+    width: 100%;
 
 }
 
-.contenedorCarrito{
+div.contenedorCarrito{
+    justify-content: center;
     display: grid;
     row-gap: 2px;
 }
@@ -73,6 +73,23 @@ li {
     padding: 3px;
 }
 
-.logoCarrito {
+.bi-cart-check {
+    padding: 10px;
     float: right;
+}
+
+.bi-cart-check:hover{
+
+    background-color: antiquewhite;
+
+}
+
+.form-inline{
+    padding: 10px;
+}
+
+.tituloCarrito{
+    background-color: rgba(4, 125, 30,.6);
+    color: white;
+
 }
