@@ -11,6 +11,22 @@ body{
     padding: 10px;
 }
 
+.cardCarrito {
+
+    align-items: center;
+    background-color: rgba(18, 187, 68, 0.5);
+    border: 1px;
+    border-style: solid;
+    padding: 5px;
+    width: 50%;
+
+}
+
+.contenedorCarrito{
+    display: grid;
+    row-gap: 2px;
+}
+
 .imgArt{
 
   border: 1px solid #ddd;
@@ -30,7 +46,7 @@ div.infoCard{
 }
 
 .imgCarrito {
-    width: 50px;
+    width: 80px;
 }
 
 .imgLogo{

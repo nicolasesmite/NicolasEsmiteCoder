@@ -36,7 +36,7 @@
        "precio":1500,
        "moneda":"UYU",
        "stock":20,
-       "imagen":"",
+       "imagen":"imagenes/Bombilla-de-plata.jpg",
        "id":141414
     },
     {
@@ -44,7 +44,7 @@
        "precio":1350,
        "moneda":"UYU",
        "stock":20,
-       "imagen":"",
+       "imagen":"imagenes/bombilla de bronce.jpg",
        "id":13131313
     },
     {
@@ -52,7 +52,7 @@
        "precio":1000,
        "moneda":"UYU",
        "stock":20,
-       "imagen":"",
+       "imagen":"imagenes/bombilla de alpaca.jpg",
        "id":121212
     }
  ]
