@@ -1,7 +1,5 @@
 body{
-    background-image: url(https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_1280.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(219, 186, 142);
 }
 
 .card {
@@ -108,4 +106,9 @@ div.href{
     text-decoration: none;
     color:black;
     font-size:larger;
+}
+
+.contenedorConsejos{
+    width: 80%;
+    margin-left: 80px;
 }
