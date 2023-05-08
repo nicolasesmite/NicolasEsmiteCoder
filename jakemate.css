@@ -108,7 +108,12 @@ div.href{
     font-size:larger;
 }
 
-.contenedorConsejos{
-    width: 80%;
-    margin-left: 80px;
+.volverAComprar{
+    float:right;
 }
+
+.volverAComprar:hover{
+    background-color: rgb(210, 120, 1);
+}
+
+
