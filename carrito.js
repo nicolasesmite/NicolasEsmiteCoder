@@ -1,4 +1,6 @@
 
+//Traemos el carrito de compras desde localStorage
+
 carritoDeCompras = JSON.parse(localStorage.getItem("carrito"));
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 
@@ -6,6 +8,8 @@ mostrarArticulosCarrito(carritoDeCompras);
 
 function mostrarArticulosCarrito(carritoDeCompras){
   contenedorCarrito.innerHTML = "";
+
+  //definimos una funcion que muestre los articulos en el DOM de carrito
 
   let info = "";
 
@@ -24,7 +28,9 @@ function mostrarArticulosCarrito(carritoDeCompras){
 
   } else {
 
-    
+  //definimos una sweetAlert para mostrar en caso de que el carrito este vacio   
+
+
   Swal.fire({
     title: '<strong><u>¡Su carrito esta vacio!</u></strong>',
     imageUrl: 'https://i.pinimg.com/originals/3f/42/cc/3f42ccba5094ec7e69811b3645f13131.jpg',

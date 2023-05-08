@@ -1,6 +1,7 @@
-/*E-commerce donde se podra comprar mates y bombillas, asi como ver consejos sobre uso e implementaciones. Web dise;ada desde cero.*/
 
 let Articulos = [];
+
+//usaremos fetch para traernos los datos de articulos desde un json local simulando una base de datos interna
 
 fetch('./jakemate.json/articulos.json')
 .then(res => res.json())
@@ -26,13 +27,15 @@ if (localStorage.getItem("carrito") != null){
 
 function agregarAlCarrito(idCarro) {
 
+  //funcion que agrega elementos en el carrito
+
   if (carrito.length > 0) {
     if ((carrito.find(({ id }) => id === idCarro)) != undefined) {
 
       const filtrado = carrito.filter((e) => {
         return e.id == idCarro;
       });
-
+      //en caso de ya estar el articulo se le aumenta la cantidad en 1
       let encontrado = filtrado[0];
       encontrado.cantidad += 1;
 
@@ -75,6 +78,7 @@ function agregarAlCarrito(idCarro) {
 
   localStorage.setItem("carrito", JSON.stringify(carrito))
 
+  //desplegamos una sweet alert que da la opcion de continuar al carrito o seguir comprando
   Swal.fire({
     title: '<strong><u>¡Producto agregado con exito!</u></strong>',
     icon: 'success',
@@ -100,6 +104,7 @@ function agregarAlCarrito(idCarro) {
 
 
 function mostrarArticulos(arr) {
+  //definimos la funcion para mostrar lo articulos 
   informacion.innerHTML = "";
   let info = "";
 
@@ -127,6 +132,7 @@ function mostrarArticulos(arr) {
 
 
 function filtrarArticulos(arr, filtro) {
+  //funcion que se llama desde el boton buscar, pasando parametros y filtros
   const filtrado = arr.filter((e) => {
     return e.nombre.includes(filtro);
   });
